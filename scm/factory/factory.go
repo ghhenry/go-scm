@@ -119,6 +119,7 @@ func NewClient(driver, serverURL, oauthToken string, opts ...ClientOptionFunc) (
 	if oauthToken != "" {
 		switch driver {
 		case "gitea":
+		case "gogs":
 			client.Client = &http.Client{
 				Transport: &transport.Authorization{
 					Scheme:      "token",
